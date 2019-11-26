@@ -126,4 +126,13 @@ public final class SDLSurface {
         
         try SDL_FillRect(internalPointer, rectPointer, color.rawValue).sdlThrow(type: type(of: self))
     }
+    
+    lazy private(set)
+    public
+    var
+    format: SDLPixelFormat =
+    {
+    	let sf = try! SDLPixelFormat(sdl: self.internalPointer.pointee.format.pointee)
+		return sf
+    }()
 }

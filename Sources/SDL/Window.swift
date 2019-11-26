@@ -125,6 +125,10 @@ public final class SDLWindow {
             
         }
     }
+    
+    public	 lazy	var			surface		: SDLSurface?		=	{
+    																	do { let s = try SDLSurface(window: self); return s }
+    																	catch let e { return nil } }()
 }
 
 // MARK: - Supporting Types

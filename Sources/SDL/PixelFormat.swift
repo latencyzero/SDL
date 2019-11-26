@@ -16,6 +16,13 @@ public final class SDLPixelFormat {
     
     // MARK: - Initialization
     
+    init(sdl inFormat: SDL_PixelFormat)
+    	throws
+    {
+        let internalFormat = SDL_AllocFormat(inFormat.format)
+    	self.internalPointer = try internalFormat.sdlThrow(type: type(of: self))
+    }
+    
     deinit {
         SDL_FreeFormat(internalPointer)
     }
