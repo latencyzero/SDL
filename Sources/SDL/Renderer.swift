@@ -143,6 +143,18 @@ public final class SDLRenderer {
         
         try SDL_RenderFillRect(internalPointer, rectPointer).sdlThrow(type: type(of: self))
     }
+    /// Stroke a rectangle on the current rendering target with the drawing color.
+    public func stroke(rect: SDL_Rect? = nil) throws {
+        
+        let rectPointer: UnsafePointer<SDL_Rect>?
+        if let rect = rect {
+            rectPointer = withUnsafePointer(to: rect) { $0 }
+        } else {
+            rectPointer = nil
+        }
+        
+        try SDL_RenderDrawRect(internalPointer, rectPointer).sdlThrow(type: type(of: self))
+    }
 }
 
 // MARK: - Supporting Types

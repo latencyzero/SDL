@@ -46,7 +46,7 @@ public final class SDLWindow {
     }
     
     /// Use this function to get the size of a window's client area (in points).
-    public var size: (width: Int, height: Int) {
+    public var size: (width: Int32, height: Int32) {
         
         get {
             
@@ -54,7 +54,7 @@ public final class SDLWindow {
             var height: Int32 = 0
             SDL_GetWindowSize(internalPointer, &width, &height)
             
-            return (Int(width), Int(height))
+            return (width, height)
         }
         
 		set { SDL_SetWindowSize(internalPointer, Int32(newValue.width), Int32(newValue.height)) }

@@ -6,6 +6,7 @@
 //
 
 import CSDL2
+import CSDL2TTF
 
 /// SDL Surface
 public final class SDLSurface {
@@ -42,6 +43,14 @@ public final class SDLSurface {
         self.internalPointer = try internalPointer.sdlThrow(type: type(of: self))
     }
     
+	public
+	init(utf8 inText: String, font inFont: SDLFont, color inColor: SDL_Color)
+		throws
+	{
+		let internalPointer = TTF_RenderUTF8_Blended(inFont.internalPointer, inText, inColor)
+        self.internalPointer = try internalPointer.sdlThrow(type: type(of: self))
+	}
+
     // MARK: - Accessors
     
     public var width: Int {

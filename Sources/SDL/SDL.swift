@@ -43,3 +43,10 @@ public extension SDL {
         case events = 0x00004000
     }
 }
+
+
+public
+extension
+SDL_Rect
+{
+}
