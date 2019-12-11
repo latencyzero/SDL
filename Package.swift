@@ -8,17 +8,17 @@ let package = Package(
         .library(
             name: "SDL",
             targets: ["SDL"]),
-        .executable(
-            name: "SDLDemo",
-            targets: ["SDLDemo"]),
+//        .executable(
+//            name: "SDLDemo",
+//            targets: ["SDLDemo"]),
         ],
     targets: [
-        .target(
-            name: "SDLDemo",
-            dependencies: ["SDL"]),
+//        .target(
+//            name: "SDLDemo",
+//            dependencies: ["SDL"]),
         .target(
             name: "SDL",
-            dependencies: ["CSDL2"]),
+            dependencies: ["CSDL2", "CSDL2TTF"]),
         .systemLibrary(
             name: "CSDL2",
             pkgConfig: "sdl2",
@@ -26,9 +26,16 @@ let package = Package(
                 .brew(["sdl2"]),
                 .apt(["libsdl2-dev"])
             ]),
-        .testTarget(
-            name: "SDLTests",
-            dependencies: ["SDL"]),
+        .systemLibrary(
+            name: "CSDL2TTF",
+            pkgConfig: "sdl2_ttf",
+            providers: [
+                .brew(["sdl2_ttf"]),
+                .apt(["libsdl2ttf-dev"])
+            ]),
+//        .testTarget(
+//            name: "SDLTests",
+//            dependencies: ["SDL"]),
         ],
     swiftLanguageVersions: [.v5]
 )
