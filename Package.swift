@@ -24,14 +24,14 @@ let package = Package(
             pkgConfig: "sdl2",
             providers: [
                 .brew(["sdl2"]),
-                .apt(["libsdl2-dev"])
+                .apt(["libSDL2-dev"])
             ]),
         .systemLibrary(
             name: "CSDL2TTF",
             pkgConfig: "sdl2_ttf",
             providers: [
                 .brew(["sdl2_ttf"]),
-                .apt(["libsdl2ttf-dev"])
+                .apt(["libSDL2-ttf-dev"])
             ]),
 //        .testTarget(
 //            name: "SDLTests",
