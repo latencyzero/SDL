@@ -12,7 +12,7 @@ let package = Package(
     targets: [
         .target(
             name: "SDL",
-            dependencies: ["CSDL2", "CSDL2TTF"]),
+            dependencies: ["CSDL2", "CSDL2TTF", "CSDL2Image"]),
         .systemLibrary(
             name: "CSDL2",
             pkgConfig: "sdl2",
@@ -27,6 +27,13 @@ let package = Package(
                 .brew(["sdl2_ttf"]),
                 .apt(["libsdl2-ttf-dev"])
             ]),
+		.systemLibrary(
+			name: "CSDL2Image",
+			pkgConfig: "sdl2_image",
+			providers: [
+				.brew(["sdl2_image"]),
+				.apt(["libsdl2-image-dev"])
+			]),
         ],
     swiftLanguageVersions: [.v5]
 )
