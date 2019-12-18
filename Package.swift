@@ -8,14 +8,8 @@ let package = Package(
         .library(
             name: "SDL",
             targets: ["SDL"]),
-//        .executable(
-//            name: "SDLDemo",
-//            targets: ["SDLDemo"]),
         ],
     targets: [
-//        .target(
-//            name: "SDLDemo",
-//            dependencies: ["SDL"]),
         .target(
             name: "SDL",
             dependencies: ["CSDL2", "CSDL2TTF"]),
@@ -24,18 +18,15 @@ let package = Package(
             pkgConfig: "sdl2",
             providers: [
                 .brew(["sdl2"]),
-                .apt(["libSDL2-dev"])
+                .apt(["libsdl2-dev"])
             ]),
         .systemLibrary(
             name: "CSDL2TTF",
             pkgConfig: "sdl2_ttf",
             providers: [
                 .brew(["sdl2_ttf"]),
-                .apt(["libSDL2-ttf-dev"])
+                .apt(["libsdl2-ttf-dev"])
             ]),
-//        .testTarget(
-//            name: "SDLTests",
-//            dependencies: ["SDL"]),
         ],
     swiftLanguageVersions: [.v5]
 )
