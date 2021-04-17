@@ -73,18 +73,18 @@ internal extension SDLPixelFormat.Format {
 public extension SDLPixelFormat.Format {
     
     /// SDL_PIXELFORMAT_INDEX1LSB
-    static let index1LSB = SDLPixelFormat.Format(rawValue: UInt32(SDL_PIXELFORMAT_INDEX1LSB))
+    static let index1LSB = SDLPixelFormat.Format(rawValue: SDL_PIXELFORMAT_INDEX1LSB.rawValue)
     
     /// SDL_PIXELFORMAT_INDEX1MSB
-    static let index1MSB = SDLPixelFormat.Format(rawValue: UInt32(SDL_PIXELFORMAT_INDEX1MSB))
+    static let index1MSB = SDLPixelFormat.Format(rawValue: SDL_PIXELFORMAT_INDEX1MSB.rawValue)
     
     #if os(macOS)
     /// SDL_PIXELFORMAT_ARGB32
-    static let argb32 = SDLPixelFormat.Format(rawValue: UInt32(SDL_PIXELFORMAT_ARGB32))
+    static let argb32 = SDLPixelFormat.Format(rawValue: SDL_PIXELFORMAT_ARGB32.rawValue)
     #endif
     
     /// SDL_PIXELFORMAT_ARGB8888
-    static let argb8888 = SDLPixelFormat.Format(rawValue: UInt32(SDL_PIXELFORMAT_ARGB8888))
+    static let argb8888 = SDLPixelFormat.Format(rawValue: SDL_PIXELFORMAT_ARGB8888.rawValue)
 }
 
 // MARK: - ExpressibleByIntegerLiteral
@@ -117,3 +117,18 @@ extension SDLPixelFormat.Format: CustomDebugStringConvertible {
         return formatName
     }
 }
+
+//extension
+//SDL_PixelFormatEnum: BinaryInteger
+//{
+//	public typealias Words = UInt32.Words
+//
+//	public typealias Magnitude = UnsignedInteger.magnitude
+//
+//	public static func + (lhs: SDL_PixelFormatEnum, rhs: SDL_PixelFormatEnum) -> SDL_PixelFormatEnum {
+//		<#code#>
+//	}
+//
+//	public typealias IntegerLiteralType = <#type#>
+//
+//}
